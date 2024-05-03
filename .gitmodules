@@ -1,3 +1,6 @@
 [submodule "thirdparty/libssh2"]
 	path = thirdparty/libssh2
 	url = https://github.com/libssh2/libssh2.git
+[submodule "thirdparty/glog"]
+	path = thirdparty/glog
+	url = https://github.com/google/glog.git

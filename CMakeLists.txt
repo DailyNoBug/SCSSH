@@ -8,9 +8,11 @@ message(STATUS "LIBSSH_TOP_DIR: ${LIBSSH_TOP_DIR}")
 set(LIBSSH2_INCLUDE_DIR ${LIBSSH_TOP_DIR}/include
                         ${LIBSSH_TOP_DIR}/src)
 
-add_subdirectory(thirdparty/libssh2)
 include_directories(${LIBSSH2_INCLUDE_DIR})
+add_subdirectory(thirdparty/libssh2)
+add_subdirectory(thirdparty/glog)
+add_subdirectory(src)
 
-add_executable(SCSSH main.cpp)
 target_link_libraries(SCSSH libssh2::libssh2)
+target_link_libraries(SCSSH glog::glog)
 
