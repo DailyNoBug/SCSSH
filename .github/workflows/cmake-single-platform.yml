@@ -27,7 +27,6 @@ jobs:
         run: |
           apt update -y
           apt install -y cmake
-          shell: bash
 
       - name: Submodule update
         run: git submodule update --init --recursive
