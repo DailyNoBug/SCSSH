@@ -9,8 +9,10 @@ set(LIBSSH2_INCLUDE_DIR ${LIBSSH_TOP_DIR}/include
                         ${LIBSSH_TOP_DIR}/src)
 
 include_directories(${LIBSSH2_INCLUDE_DIR})
+message(STATUS "<=================== thirdparty modules start ========================>")
 add_subdirectory(thirdparty/libssh2)
 add_subdirectory(thirdparty/glog)
+message(STATUS "<=================== thirdparty modules end   ========================>")
 add_subdirectory(src)
 
 target_link_libraries(SCSSH libssh2::libssh2)
