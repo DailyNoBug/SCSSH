@@ -30,7 +30,8 @@ jobs:
 
       - name: Submodule update
         run: |
-          git config --global --add safe.directory ${{github.workspace}}
+          pwd
+          git config --global --add safe.directory /__w/SCSSH/SCSSH
           git submodule update --init --recursive
 
       - name: Build
