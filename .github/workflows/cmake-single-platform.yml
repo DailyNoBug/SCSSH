@@ -27,6 +27,7 @@ jobs:
         run: |
           apt update
           apt install -y wget
+          apt install -y clang
           wget https://github.com/Kitware/CMake/releases/download/v3.29.2/cmake-3.29.2-linux-x86_64.sh
           chmod +x cmake-3.29.2-linux-x86_64.sh
           ./cmake-3.29.2-linux-x86_64.sh --prefix=/usr/local --exclude-subdir
@@ -42,7 +43,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake ..
+          CC=clang CXX=clang++ cmake ..
           cmake --build .
 
       - name: Test
