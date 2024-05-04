@@ -29,7 +29,9 @@ jobs:
           apt install -y cmake
 
       - name: Submodule update
-        run: git submodule update --init --recursive
+        run: |
+          git config --global --add safe.directory ${{github.workspace}}
+          git submodule update --init --recursive
 
       - name: Build
         run: |
